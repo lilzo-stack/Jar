@@ -1,0 +1,55 @@
+/* App-specific styles */
+
+/* Smooth transitions for all interactive elements */
+button,
+input {
+  transition: all 0.2s ease;
+}
+
+/* Custom selection color */
+::selection {
+  background: hsl(187 94% 53% / 0.3);
+  color: white;
+}
+
+/* Focus visible styles */
+*:focus-visible {
+  outline: 2px solid hsl(187 94% 53% / 0.5);
+  outline-offset: 2px;
+}
+
+/* Prevent text selection on UI elements */
+.no-select {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Mobile optimizations */
+@media (max-width: 640px) {
+  .glass-strong {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+}
+
+/* Tablet optimizations */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .glass-strong {
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .glass,
+  .glass-strong {
+    background: hsl(0 0% 0% / 0.95);
+    border-color: hsl(187 94% 53%);
+  }
+}
