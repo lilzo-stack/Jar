@@ -8,7 +8,7 @@ import './App.css';
 
 // OpenRouter API Configuration
 const openrouter = new OpenRouter({
-  apiKey: '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', // Replace with your actual key
+  apiKey: import.meta.env.VITE_OPENROUTER_API_KEY || '',
 });
 
 // Generate unique ID
@@ -169,6 +169,11 @@ function App() {
     abortControllerRef.current = new AbortController();
 
     try {
+      // Check if API key is configured
+      if (!import.meta.env.VITE_OPENROUTER_API_KEY) {
+        throw new Error('OpenRouter API key not configured. Please add VITE_OPENROUTER_API_KEY to your .env file.');
+      }
+
       // Build prompt with file content
       const fullPrompt = buildPromptWithFiles(trimmedInput, currentAttachments);
 
