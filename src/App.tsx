@@ -8,7 +8,7 @@ import './App.css';
 
 // OpenRouter API Configuration
 const openrouter = new OpenRouter({
-  apiKey: 'sk-or-v1-00000000000000000000000000000000000000000000000000', // Replace with your actual key
+  apiKey: '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', // Replace with your actual key
 });
 
 // Generate unique ID
